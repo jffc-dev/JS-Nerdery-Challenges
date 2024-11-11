@@ -54,7 +54,14 @@ Invoking "circularArray(2)" should return "["Island", "Japan", "Israel", "German
 const COUNTRY_NAMES = ["Germany", "Norway", "Island", "Japan", "Israel"];
 
 const circularArray = (index) => {
-  // YOUR CODE HERE...
+  if(index < 0){
+    throw new Error('Index must be a positive number')
+  }
+  const circleIndex = (index >= COUNTRY_NAMES.length) ? index % COUNTRY_NAMES.length : index
+  const firstArray = COUNTRY_NAMES.slice(circleIndex, COUNTRY_NAMES.length)
+  const secondArray = COUNTRY_NAMES.slice(0, circleIndex)
+
+  return [...firstArray, ...secondArray]
 };
 
 circularArray(2);
