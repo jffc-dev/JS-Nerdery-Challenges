@@ -90,7 +90,15 @@ The last 3 digits for the sum of powers from 1 to 10 is "317"
 ***** */
 
 const ownPower = (number, lastDigits) => {
-  // YOUR CODE HERE...
+  let currentNumber = number
+  let accumulator = 0
+  while(currentNumber > 0){
+    accumulator += Math.pow(currentNumber, currentNumber)
+    currentNumber--
+  }
+
+  const stringAccumulator = accumulator.toString()
+  return stringAccumulator.slice(-1 * lastDigits)
 };
 
 ownPower(10, 3);
