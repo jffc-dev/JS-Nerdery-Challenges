@@ -158,7 +158,27 @@ Because the 12th index in the Fibonacci sequence is 144, and 144 has three digit
 ***** */
 
 const fibIndex = (n) => {
-  // YOUR CODE HERE...
+  if(n < 0){
+    throw new Error('The parameter n should be greater than 0')
+  }
+
+  const fibonacciArray = []
+  let currentIndex = 0
+  while(true){
+    let fibonacciElement = 0
+    if(currentIndex>1){
+      fibonacciElement = fibonacciArray[fibonacciArray.length - 1] + fibonacciArray[fibonacciArray.length - 2]
+    }else{
+      fibonacciElement = currentIndex
+    }
+    fibonacciArray.push(fibonacciElement)
+    
+    if(fibonacciElement.toString().length === n){
+      break
+    }
+    currentIndex++
+  }
+  return currentIndex
 };
 
 fibIndex(3);
