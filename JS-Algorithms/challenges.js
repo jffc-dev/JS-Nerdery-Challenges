@@ -123,6 +123,18 @@ Since 10! === 3628800 and you sum 3 + 6 + 2 + 8 + 8 + 0 + 0
 ***** */
 
 const digitSum = (n) => {
+  let acc = BigInt(1), digitSum = 0
+  while(n > 0){
+    acc *= BigInt(n)
+    n--
+  }
+
+  const stringAcc = acc.toString()
+  for(digit of stringAcc){
+    digitSum += Number(digit)
+  }
+
+  return digitSum
 
 };
 
