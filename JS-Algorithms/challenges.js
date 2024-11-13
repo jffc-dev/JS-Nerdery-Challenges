@@ -90,10 +90,10 @@ The last 3 digits for the sum of powers from 1 to 10 is "317"
 ***** */
 
 const ownPower = (number, lastDigits) => {
-  let currentNumber = number
-  let accumulator = 0
+  let currentNumber = BigInt(number)
+  let accumulator = BigInt(0)
   while(currentNumber > 0){
-    accumulator += Math.pow(currentNumber, currentNumber)
+    accumulator += currentNumber ** currentNumber
     currentNumber--
   }
 
@@ -123,7 +123,7 @@ Since 10! === 3628800 and you sum 3 + 6 + 2 + 8 + 8 + 0 + 0
 ***** */
 
 const digitSum = (n) => {
-  // YOUR CODE HERE...
+
 };
 
 digitSum(10);
